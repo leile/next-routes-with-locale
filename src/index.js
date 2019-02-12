@@ -4,7 +4,7 @@ import pathToRegexp from "path-to-regexp";
 import React from "react";
 import { parse } from "url";
 
-module.exports = opts => new Routes(opts);
+export default opts => new Routes(opts);
 
 class Routes {
   constructor({

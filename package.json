@@ -1,6 +1,6 @@
 {
   "name": "next-routes-with-locale-fix",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Easy to use locale-based dynamic routes for Next.js",
   "repository": "vonschau/next-routes-with-locale",
   "main": "dist",
@@ -9,12 +9,12 @@
   ],
   "scripts": {
     "build": "del dist/* && babel src -d dist",
-    "prepublishOnly": "npm run test",
-    "pretest": "npm run build",
-    "test": "npm run testOnly",
+    "prepublishOnly": "yarn run test",
+    "pretest": "yarn run build",
+    "test": "yarn run testOnly",
     "testOnly": "jest \\.test.js --coverage",
-    "testCI": "npm run test && cat coverage/lcov.info | coveralls",
-    "dev": "concurrently -k 'npm run build -- -w' 'npm run testOnly -- --watch'"
+    "testCI": "yarn run test && cat coverage/lcov.info | coveralls",
+    "dev": "concurrently -k 'yarn run build -- -w' 'yarn run testOnly -- --watch'"
   },
   "jest": {
     "roots": [
@@ -30,11 +30,13 @@
     "react": ">=16.8.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "7.2.2",
-    "@babel/preset-env": "^7.3.1",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.1.0",
+    "@babel/plugin-transform-runtime": "7.2.0",
+    "@babel/runtime": "7.3.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
+    "@babel/cli": "7.0.0",
+    "@babel/core": "7.0.0",
+    "@babel/preset-env": "7.3.1",
+    "babel-jest": "^20.0.3",
     "concurrently": "^4.1.0",
     "coveralls": "^3.0.2",
     "del-cli": "^1.1.0",
