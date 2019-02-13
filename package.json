@@ -5,7 +5,8 @@
   "repository": "vonschau/next-routes-with-locale",
   "main": "dist",
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "types": "index.d.ts",
   "scripts": {
