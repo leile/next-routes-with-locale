@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 import NextRouter from "next/router";
-import pathToRegexp from "path-to-regexp";
+import { pathToRegexp, compile } from "path-to-regexp";
 import React from "react";
 import { parse } from "url";
 
@@ -231,7 +231,7 @@ class Route {
     this.page = page.replace(/(^|\/)homepage/, "").replace(/^\/?/, "/");
     this.regex = pathToRegexp(this.pattern, (this.keys = []));
     this.keyNames = this.keys.map(key => key.name);
-    this.toPath = pathToRegexp.compile(this.pattern);
+    this.toPath = compile(this.pattern);
     this.data = data || {};
     this.hideLocale = hideLocale || false;
   }
